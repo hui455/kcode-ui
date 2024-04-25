@@ -1,0 +1,20 @@
+.app-button{
+   color: red;
+   height: 100px !important;
+}
+
+.global-component {
+   position: relative;
+ }
+ 
+ .global-component .arrow {
+   position: absolute;
+   top: -10px; /* 调整箭头位置 */
+   left: 50%; /* 居中箭头 */
+   transform: translateX(-50%); /* 水平居中箭头 */
+   width: 0;
+   height: 0;
+   border-left: 5px solid transparent;
+   border-right: 5px solid transparent;
+   border-bottom: 5px solid #000; /* 箭头颜色 */
+ }

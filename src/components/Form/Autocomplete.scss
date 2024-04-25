@@ -1,0 +1,138 @@
+.k-autocomplete-b{
+  width: fit-content;
+  position: relative;
+  background-color: #fff;
+  &.disabled{
+    cursor: not-allowed;
+    .k-autocomplete{
+      pointer-events: none;
+    }
+    .k-icon{
+      pointer-events: none;
+    }
+  }
+  .k-icon{
+    position: absolute;
+    right:0;
+    top:0;
+    height: 100%;
+    margin-right: 8px;
+    transition: transform 0.2s;
+  }
+}
+.k-autocomplete{
+  height: 30px;
+  border: 1px solid gray;
+  width:200px;
+  padding: 0px 8px;
+  line-height: 30px;
+  color:#606266;
+  font-size: 16px;
+  font-weight: 400;
+  caret-color: gray;
+  &.k-select:focus {
+    color: #60626670;
+  }
+  &.k-select{
+    cursor: pointer;
+  }
+  &:focus{
+    outline: none;
+    border-color: #409fff;
+  }
+  &.close{
+    padding-right: 28px;
+    width: 180px;
+  }
+}
+.k-input-close{
+  position: absolute;
+  top:0;
+  right: 0;
+  height: 28px;
+  width: 28px;
+  line-height: 28px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.k-autocomplete-arrow{
+  position: absolute;
+  bottom: 100%; /* 调整箭头位置 */
+  left: 50%; /* 居中箭头 */
+  transform: translateX(-50%); /* 水平居中箭头 */
+  margin-bottom: -1px ;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #fff; /* 箭头颜色 */
+  z-index: 1000;
+}
+.k-autocomplete-select{
+  display: none;
+  position: absolute;
+  min-width: 210px;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  padding: 8px 0;
+  border: 1px solid #dcdfee;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, .10);
+  z-index: 999;
+  .k-autocomplete-item{
+    white-space: nowrap;
+    line-height: 30px;
+    height: 30px;
+    padding: 0 15px;
+    color:#606266;
+    &.disabled{
+      color: #60626670;
+      cursor: not-allowed;
+      &:hover{
+        background-color: #fff;
+      }
+    }
+    &:hover{
+      background-color: #c9c7c732;
+    }
+  }
+}
+
+.k-radio-group{
+  display: flex;
+  align-items: center;
+  margin:0 12px;
+  color: #606266;
+  &.default{
+    height: 32px;
+  font-size: 16px;
+  }
+  &.samll{
+    height: 24px;
+  font-size: 14px;
+  }
+  &.tiny{
+    height: 16px;
+    font-size: 12px;
+  }
+  .k-radio{
+    &.disabled{
+      cursor: not-allowed;
+      color: gray;
+      input{
+        pointer-events: none;
+      }
+      &:hover{
+        color: gray;
+      }
+    }
+    &:not(:last-child){
+      margin-right: 20px;
+    }
+    input{
+      margin-right: 8px;
+    }
+  }
+}

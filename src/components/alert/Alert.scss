@@ -1,0 +1,42 @@
+.k-alert{
+  position: relative;
+  min-height: 40px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  svg{
+    margin-top: 4px;
+    margin-right: 8px;
+  }
+  .k-alert-content{
+   span{
+    line-height: 24px;
+    font-size: 16px;
+   }
+   p{
+    font-size: 13px;
+    margin: 0;
+   }
+  }
+  .k-alert-close{
+    position:absolute;
+    right: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #cdcdcd;
+  }
+}
+.k-alert.light{
+  background: var(--alert-l);
+  color: var(--alert-d);
+}
+.k-alert.dark{
+  background: var(--alert-d);
+  color: #fff;
+}
+
+.k-big {
+  svg{
+    width: 30px;
+  }
+}

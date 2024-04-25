@@ -1,0 +1,30 @@
+.k-collapse > button{
+  width: 100%;
+  height: 48px;
+  background: #fff;
+  color: #303133;
+  font-size: 14px;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-family: "Arial", sans-serif;;
+  padding: 0;
+}
+.k-collapse-content{
+  color: #303133;
+  font-size: 14px;
+  font-family: "Arial", sans-serif;
+  padding: 0 0 25px;
+}
+.is-active{
+  display: none;
+}
+
+.k-collapse{
+  border-bottom: 1px solid #dcdfee;
+}
+ .k-collapses{
+  border-top: 1px solid #dcdfee;
+}

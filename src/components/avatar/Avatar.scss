@@ -1,0 +1,14 @@
+@mixin k-avater($width:40px,$height:40px){
+  width: $width;
+  height: $height;
+}
+
+.k-avater-default{
+  @include k-avater;
+}
+.k-avater-large{
+  @include k-avater(50px,50px);
+}
+.k-avater-small{
+  @include k-avater(24px,24px);
+}

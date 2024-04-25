@@ -1,0 +1,44 @@
+.k-messages{
+  position: fixed;
+  top:0;
+  left: 50%;
+  transform: translate(-50%,0);
+  z-index: 1999;  
+}
+
+.k-message{
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  margin: 20px auto;
+  div{
+    margin-left: 10px;
+    margin-right: 5px;
+    font-size: 14px;
+    color: var(--message-color);
+  }
+  transition: all 0.3s ease-in-out
+}
+
+.k-message-enter {
+  opacity: 0;
+  transform: translateY(150%);
+}
+.k-message-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* 退出动画 */
+.k-message-exit {
+  opacity: 1;
+}
+.k-message-exit-active {
+  opacity: 0;
+  transform: translateY(-150%);
+  transition: opacity 300ms, transform 300ms;
+}

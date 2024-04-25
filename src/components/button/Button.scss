@@ -1,0 +1,86 @@
+@mixin b-size($height: 32px, $padding: 8px 15px){
+  height: $height;
+  padding: $padding;
+}
+@mixin b-circle($width: 32px){
+  width: $width;
+  border-radius: 50%;
+  padding: 0;
+}
+@mixin b-round($width: 32px,$border-radius: 16px){
+  width: $width;
+  border-radius: $border-radius;
+}
+
+.button{
+  border: 1px solid #dcdfee;
+  border-radius: 5px 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#fff;
+  background-color: var(--button-d);
+}
+.button:hover {
+  opacity: 0.5;
+  background-color:var(--button-d)
+}
+.button.default{
+  color: var(--button-d);
+  background-color: #fff;
+  &:hover{
+    opacity: 1;
+    background-color: #ecf5ff;
+    color:#409fff;
+  }
+}
+.button.plain{
+  border: 1px solid var(--button-d);
+  color:var(--button-d);
+  background-color:var(--button-l);
+  &:hover{
+    opacity: 1;
+    background-color:var(--button-d);
+    color:#fff;
+  }
+}
+.button.plain.default{
+  background-color: #fff;
+  &:hover{
+    opacity: 1;
+    color:#409fff;
+    border: 1px solid #409fff;
+  }
+}
+
+.button-default{
+ @include b-size;
+}
+.button-large{
+  @include b-size(40px, 12px 19px);
+}
+.button-small{
+  @include b-size(24px, 5px 11px);
+}
+
+.button-default.circle{
+  @include b-circle;
+}
+.button-large.circle{
+ @include b-circle(40px);
+}
+.button-small.circle{
+  @include b-circle(24px);
+}
+.button-default.round{
+  @include b-round;
+}
+.button-large.round{
+  @include b-round(40px, 20px);
+}
+.button-small.round{
+  @include b-round(24px, 12px);
+}
+
+

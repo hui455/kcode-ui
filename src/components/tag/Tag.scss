@@ -1,0 +1,66 @@
+.k-tag{
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  border-radius: 4px;
+}
+.k-tag-light{
+  background: var(--tag-color);
+  color:var(--tag-text-color);
+  border: 1px solid var(--tag-color);
+}
+
+.k-tag-dark{
+  background: var(--tag-text-color);
+  color: #fff;
+  border: 1px solid transparent;
+}
+.k-tag-plain{
+  background:#fff;
+  color:var(--tag-text-color);
+  border: 1px solid var(--tag-text-color);
+}
+
+
+.k-tag-default{
+  height: 24px;
+  padding: 0 9px;
+  line-height: 24px;
+}
+.k-tag-default.round{
+  border-radius: 12px;
+}
+.k-tag-small{
+  height: 12px;
+  padding: 0 7px;
+  line-height: 12px;
+}
+.k-tag-small.round{
+  border-radius: 6px;
+}
+
+.k-tag-large{
+  height: 32px;
+  padding: 0 12px;
+  line-height: 32px;
+}
+
+.k-tag-large.round{
+  border-radius: 16px;
+}
+
+.k-tag-close{
+  display: inline-block;
+  margin-left: 6px;
+  line-height: 14px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  height: 14px;
+  width: 14px;
+  border-radius: 7px;
+}
+.k-tag-close:hover{
+  background: var(--tag-text-color);
+  color: #fff;
+}

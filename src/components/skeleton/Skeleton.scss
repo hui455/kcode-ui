@@ -1,0 +1,24 @@
+.k-skeleton > div{
+  background: #f0f2f3;
+}
+
+.k-skeleton-item{
+  height: 16px;
+  border-radius: 2px;
+}
+
+.k-skeleton-item.animated{
+ 
+background: linear-gradient(90deg, #f0f2f5 25%, #e6e8eb 37%, #e6e8eb 63%);
+background-size: 400% 100%;
+animation: el-skeleton-loading 1.4s ease infinite;
+}
+
+@keyframes el-skeleton-loading {
+  0% {
+    background-position: 100% 50%;
+}
+100% {
+    background-position: 0 50%;
+}
+}

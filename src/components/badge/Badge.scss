@@ -1,0 +1,24 @@
+.k-badge{
+   position: relative;
+   display: inline-block;
+}
+.k-badge-value{
+   position: absolute;
+   top:-7px;
+   right: -7px;
+   text-align: center;
+   line-height: 18px;
+   font-size:12px;
+   min-width: 18px;
+   height: 18px;
+   border-radius: 9px;
+   padding: 0 2px;
+}
+.k-badge-dot{
+   position: absolute;
+   top:-2px;
+   right: -2px;
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+}

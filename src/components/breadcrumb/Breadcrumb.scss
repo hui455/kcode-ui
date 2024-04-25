@@ -1,0 +1,21 @@
+ .k-breadcrumb{
+  list-style-type: none;
+  display: flex;
+  color:#00000073;
+  font-size: 14px;
+  li:nth-child(2n){
+    margin: 0 8px;
+  }
+  li a{
+    color:#00000073;
+    text-decoration: none;
+    padding: 0 4px;
+  }
+  li:not(:last-child) a:hover{
+    color: #000000e0;
+    background: #00000020;
+  }
+  li:last-child{
+    color: #000000e0;
+  }
+}

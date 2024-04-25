@@ -1,0 +1,29 @@
+.k-tabs-items{
+  display: flex;
+  border-bottom:1px solid #696b6f50;
+  
+}
+
+.k-tabs-item{
+  padding: 12px 0;
+  cursor: pointer;
+  span{
+    color: #000000e0;
+  }
+  &:hover span{
+    color: var(--tabs-text)
+  }
+  &:not(:first-child){
+     margin-left: 32px;
+  }
+}
+.k-tabs-item.disabled {
+    
+    cursor: not-allowed;
+   span{
+    color: gray;
+   }
+  &:hover span{
+    color:gray
+  }
+}
