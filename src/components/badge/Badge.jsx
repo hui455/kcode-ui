@@ -8,7 +8,7 @@ export default function Badge({children,value,max,color ='#f56c6c',...props}){
   return (
     <div className="k-badge " {...props}>
       {children}
-      <div className={`k-badge-${value ? 'value' : 'dot'}`} style={{background:color}}>{value}</div>
+      <div className={`k-badge-${value !== undefined ? 'value' : 'dot'}`} style={{background:color}}>{value}</div>
     </div>
   );
 }

@@ -7,7 +7,7 @@ export default function KCarousel({ width ='400px',height='200px',autoplay,dots 
      if(autoplay){
       interval  = setInterval(() => {
         nextSlide();
-      }, intervalDuration);
+      }, autoplaySpeed);
      }
     return () => clearInterval(interval);
   },[])
@@ -15,7 +15,6 @@ export default function KCarousel({ width ='400px',height='200px',autoplay,dots 
   const index = useRef(0)
   const kca = useRef(null)
   if(!children || !children.length) return <div className="k-carousel" style={{width,height}}>{children}</div>
-  const intervalDuration = typeof autoplaySpeed === 'number' ? autoplaySpeed : 3000; // 设置轮播间隔时间，单位为毫秒
   const clonechildren = [...children,children[0]]
 
 

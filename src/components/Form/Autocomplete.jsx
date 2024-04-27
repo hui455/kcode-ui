@@ -1,21 +1,22 @@
 import React,{useState,useRef} from "react";
 import './Autocomplete.scss'
-export default function Autocomplete({option = [{value:'选项1'},{value:'选项2'}],...props}){
+export default function Autocomplete({option = [{label:'选项1'},{label:'选项2'}],n=6,onClickSelect = ()=>{},...props}){
   const kselect = useRef(null)
   const kinput = useRef(null)
    const [value,setValue] = useState('')
    const [data,setData] = useState(option)
    const handleChange = (e)=>{
     setValue(e.target.value)
-    console.log(e.target.value)
-    const a = option.filter(item => item.value.indexOf(e.target.value) !== -1)
+    console.log(option)
+    const a = option.filter(item => item && item.label.indexOf(e.target.value) !== -1)
     setData(a)
     if(a.length == 0 )kselect.current.style.display = 'none'
       else kselect.current.style.display = 'block'
    }
    const Addoption = (value)=>{
-    setValue(value)
-    kselect.current.style.display = 'none'
+    setValue(value.label)
+    kselect.current.style.display = 'none',
+    onClickSelect(value)
   }
   return(
     <div className='k-autocomplete-b'>
@@ -27,8 +28,8 @@ export default function Autocomplete({option = [{value:'选项1'},{value:'选项
     
     <div ref={kselect} className='k-autocomplete-select'>
        <div className='k-autocomplete-arrow'></div>
-         {data.map((item,index)=>{
-          return <div className='k-autocomplete-item' key={index} onMouseDown={(e)=>{e.preventDefault();Addoption(item.value)}}>{item.value}</div>
+         {data.slice(0,n).map((item,index)=>{
+          return <div className='k-autocomplete-item' key={index} onMouseDown={(e)=>{e.preventDefault();Addoption(item)}}>{item.label}</div>
         })}
     </div>
     </div>

@@ -15,7 +15,7 @@ export default function KCollapse({ children,option = [],accordion, ...props }) 
     setexpand(newexpand)
   }
   return (
-    <div  className='k-collapses'>
+    <div  className='k-collapses' {...props}>
     {
       option.map((item,index)=>{
         return(
@@ -28,9 +28,6 @@ export default function KCollapse({ children,option = [],accordion, ...props }) 
         )
       })
     }
-    <div className='k-collapse'>
-      <button>content {icon1} </button>
-    </div>
     </div>
   )
 }

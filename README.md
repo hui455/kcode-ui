@@ -1,8 +1,15 @@
-# React + Vite
+# Kcode
+ 
+## 文件
+  .src/components/  组件库源代码
+  .src/componnets/index.js  组件库入口
+  ./src/views/   组件示例源代码
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 使用
 
-Currently, two official plugins are available:
+1. npm install kcode-ui
+2. import { Button ...} from 'kcode-ui'
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+或者 
+
+直接code 源代码

@@ -2,13 +2,25 @@
   width: $width;
   height: $height;
 }
-
-.k-avater-default{
+.k-avatar{
+  overflow: hidden;
+  > *{
+    width: 100%;
+    height: 100%;
+  }
+  &.square{
+    border-radius: 0px;
+  }
+  &.circle{
+    border-radius: 50%;
+  }
+}
+.k-avatar-default{
   @include k-avater;
 }
-.k-avater-large{
+.k-avatar-large{
   @include k-avater(50px,50px);
 }
-.k-avater-small{
+.k-avatar-small{
   @include k-avater(24px,24px);
 }

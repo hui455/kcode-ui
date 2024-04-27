@@ -26,3 +26,4 @@ export { default as Autocomplete ,Input,Radio} from './Form/Autocomplete'
 export { default as Select}from './Form/Select'
 export { default as Slider}from  './slider/Slider'
 export { default as Switch}from './switch/Switch' //33
+export { default as Menu } from './menu/Menu'

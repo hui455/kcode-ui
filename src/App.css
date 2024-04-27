@@ -18,3 +18,36 @@
    border-right: 5px solid transparent;
    border-bottom: 5px solid #000; /* 箭头颜色 */
  }
+ .k-context{
+   padding: 40px 30px 0 30px;
+ }
+ .k-list{
+   display: flex;
+   margin-bottom: 10px;
+   flex-wrap: wrap;
+ }
+ .k-list > *{
+   margin-right: 10px;
+   margin-bottom: 10px;
+ }
+ .k-context-title{
+   font-size: 32px;
+   height: 40px;
+   line-height: 40px;
+ }
+ .k-context-m{
+   margin: 20px 0;
+   font-size: 14px;
+   white-space: wrap;
+ }
+
+ .k-context-item-title{
+  font-size: 24px;
+  height: 32px;
+  line-height: 32px;
+ }
+ .k-context-i{
+   width: 100%;
+   padding: 15px;
+   border: 1px solid #dcdfee;
+ }

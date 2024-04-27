@@ -2,7 +2,6 @@ import React,{useEffect} from "react";
 
 
 export default function Watermark ({content = '水印',rotate,font,children,cross,width,height,...props}) {
-  
   useEffect(() => {
     genWaterMark({
       content,
@@ -11,7 +10,7 @@ export default function Watermark ({content = '水印',rotate,font,children,cros
       cross,font,
       rotate,
     });
-  }, []);
+  }, [cross]);
   return(
     <div className="k-watermark" style={{width,height:'200px',overflow:'hidden'}}>
        {children}
@@ -65,7 +64,7 @@ const genWaterMark = ({
     background-repeat: repeat;
     background-position: 0 0;
     pointer-events: none;
-    position: ${cross ? 'fixed': ''} ;
+    position: ${cross ? 'fixed': 'static'} ;
     top: 0;
     left: 0;
   } 

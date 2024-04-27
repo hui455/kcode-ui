@@ -1,4 +1,4 @@
-#  kcode-ui
+#  <strong>kcode-ui</strong>
 
 A simple UI component library.
 
