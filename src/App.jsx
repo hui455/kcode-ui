@@ -1,7 +1,7 @@
 import { Link,Menu ,Scrollbar,Autocomplete} from './components'
 import React,{useState,lazy,Suspense} from 'react'
 import './App.css'
-import { Context } from './Conntext'
+import { Context, ContextItem } from './Conntext'
 
 
   const comMap ={
@@ -17,6 +17,18 @@ import { Context } from './Conntext'
     Tabs: lazy(() => import('./views/Tabs.jsx')),
     Tag: lazy(() => import('./views/Tag.jsx')),
     Watermark: lazy(() => import('./views/Watermark.jsx')),
+    Affix: lazy(() => import('./views/Affix.jsx')),
+    Empty: lazy(() => import('./views/Empty.jsx')),
+    Progerss: lazy(() => import('./views/Progerss.jsx')),
+    Switch: lazy(() => import('./views/Switch.jsx')),
+    Radio: lazy(() => import('./views/Radio.jsx')),
+    Tooltip: lazy(() => import('./views/Tooltip.jsx')),
+    Slider: lazy(() => import('./views/Slider.jsx')),
+    Select: lazy(() => import('./views/Select.jsx')),
+    Autocomplete: lazy(() => import('./views/Autocomplete.jsx')),
+    Input: lazy(() => import('./views/Input.jsx')),
+    Form: lazy(() => import('./views/Form.jsx')),
+    Table:lazy(()=> import('./views/Table.jsx'))
   }
   const items = [
     {
@@ -124,7 +136,7 @@ import { Context } from './Conntext'
     ]
     },{
       type:'group',
-      label:'反馈组件(4)',
+      label:'反馈组件(5)',
       children:[
         {
           label:'提示 Alert',
@@ -141,7 +153,10 @@ import { Context } from './Conntext'
         {
           label: '消息 Message',
           key: 'Message'
-        },
+        },{
+          label:'文字提示 Tooltip',
+          key:'Tooltip'
+        }
       
       ]
     },
@@ -180,10 +195,12 @@ import { Context } from './Conntext'
 const List = [...items[0].children,...items[1].children,...items[2].children,...items[3].children]
 
 function App() {
-  const [comName,setComName] = useState('Button')
+  const menu = localStorage.getItem('menu') || 'Button'
+  const [comName,setComName] = useState(menu)
   let Com = comMap[comName] || Loading
   const ChangeComName = (n)=> {
-      setComName(n.key)
+      setComName(n.key),
+      localStorage.setItem('menu',n.key)
   }
 
   return (
@@ -191,12 +208,14 @@ function App() {
      <Headers List={List} onClickSelect={ChangeComName}></Headers>
      <div style={{display:'flex',height:'calc(100vh - 51px)'}}>
       <Scrollbar width='300px'>
-      <Menu onChange={ChangeComName} items={items} ></Menu>
+      <Menu onChange={ChangeComName} items={items} item={menu} ></Menu>
       </Scrollbar>
-      <div style={{width:'100%' ,overflow:'hidden',borderLeft:'1px solid #eee'}}>
-       <Suspense >
+      <div style={{width:'100%' ,borderLeft:'1px solid #eee'}}>
+        <Suspense >
         <Com></Com>
-        </Suspense>
+        </Suspense>   
+         
+
       </div>
      </div>
     </>
@@ -301,8 +320,10 @@ const Headers = ({onClickSelect,...props})=>{
 
   return (
     <div style={{borderBottom:'1px solid #eee',margin:'0 20px',display:'flex',justifyContent:'space-between',height:'50px',alignItems:'center'}}>
-      <span style={{fontSize:'20px',color:'skyblue'}}><strong>Kcode-UI</strong></span>
-        <Autocomplete placeholder='搜索内容' onClickSelect={onClickSelect} option={List} style={{width:'200px',flexGrow:'1',marginRight:'600px'}}></Autocomplete>
+      <div style={{display:'flex',alignItems:'center'}}>
+      <span style={{fontSize:'20px',color:'skyblue',marginRight:'160px'}}><strong>Kcode-UI</strong></span>
+        <Autocomplete placeholder='搜索内容' onClickSelect={onClickSelect} option={List} style={{width:'200px',flexGrow:'1'}}></Autocomplete>
+        </div>
         <div>
       <Link href="https://github.com/hui455/kcode-ui">
       <svg t="1714120577821" className="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4255" width="20" height="20"><path d="M511.957333 21.333333C241.024 21.333333 21.333333 240.981333 21.333333 512c0 216.832 140.544 400.725333 335.573334 465.664 24.490667 4.394667 32.256-10.069333 32.256-23.082667 0-11.690667 0.256-44.245333 0-85.205333-136.448 29.610667-164.736-64.64-164.736-64.64-22.314667-56.704-54.4-71.765333-54.4-71.765333-44.586667-30.464 3.285333-29.824 3.285333-29.824 49.194667 3.413333 75.178667 50.517333 75.178667 50.517333 43.776 75.008 114.816 53.333333 142.762666 40.789333 4.522667-31.658667 17.152-53.376 31.189334-65.536-108.970667-12.458667-223.488-54.485333-223.488-242.602666 0-53.546667 19.114667-97.322667 50.517333-131.669334-5.034667-12.330667-21.930667-62.293333 4.778667-129.834666 0 0 41.258667-13.184 134.912 50.346666a469.802667 469.802667 0 0 1 122.88-16.554666c41.642667 0.213333 83.626667 5.632 122.88 16.554666 93.653333-63.488 134.784-50.346667 134.784-50.346666 26.752 67.541333 9.898667 117.504 4.864 129.834666 31.402667 34.346667 50.474667 78.122667 50.474666 131.669334 0 188.586667-114.730667 230.016-224.042666 242.090666 17.578667 15.232 33.578667 44.672 33.578666 90.453334v135.850666c0 13.141333 7.936 27.605333 32.853334 22.869334C862.250667 912.597333 1002.666667 728.746667 1002.666667 512 1002.666667 240.981333 783.018667 21.333333 511.957333 21.333333z" p-id="4256"></path></svg>

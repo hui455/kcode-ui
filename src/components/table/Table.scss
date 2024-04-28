@@ -1,0 +1,76 @@
+.k-table{
+  border-collapse: collapse;
+  border-spacing: 0px;
+  table-layout: fixed;
+  width: 100%;
+  tr:first-child{
+    position: sticky;
+    top: 0;
+  }
+  &.border{
+    th,td{
+      border: 1px solid #00000012;
+    }
+    border: 1px solid #00000012;
+  }
+  &.stripe{
+    tr:nth-child(2n+1):not(:first-child){
+      background-color: #eeeeee70;
+    }
+  }
+  tr:not(:first-child):hover{
+    background-color: #f0f2f580 !important;
+
+  }
+  tr{
+    background-color: #fff;
+  }
+  th,td{
+    min-width: 120px;
+    padding: 10px 20px 10px 12px;
+    border-bottom: 1px solid #00000012;
+  }
+  td:last-child{
+    padding-right: 35px;
+  }
+ th{
+    text-align: left;
+    color:#000000e0
+  }
+ 
+}
+
+.k-table-b{
+   color: #000000e0;
+    overflow-y: scroll;
+    position: relative;
+    width:fit-content;
+    &::-webkit-scrollbar{
+    width: 0px;
+    height: 0px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: transparent; /* 滚动条背景色 */
+  }
+  &::-webkit-scrollbar-thumb {
+    background:red; /* 滚动条滑块颜色 */
+    border-radius: 5px; /* 滑块圆角 */
+    height: 0px;
+  }
+  .k-table-scroll{
+    position: absolute;
+    display: none;
+    width: 6px;
+    border-radius: 3px;
+    background: #e4e5e7;
+    right:0;
+    cursor: pointer;
+    &:hover{
+      display: block;
+    }
+  }
+ .k-table:not(tr:first-child):hover ~ .k-table-scroll{
+    display: block;
+  }
+}

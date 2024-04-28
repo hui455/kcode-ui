@@ -1,19 +1,38 @@
 import React from 'react';
 import '../App.css'
-import { Button } from '../components'
+import { columns,render } from '../tableColumns.jsx';
+import { Button, Table } from '../components'
 import { Context,ContextItem } from '../Conntext';
 export  default function KButon(){
 
   return (
      <Context title="Button" describe='一些普通的按钮'>
-       <ContextItem title="基础用法" describe='使用type 、plain 、round 、circle 来定义按钮样式'>
+       <ContextItem title="基础用法" 
+        code ={`
+      import { Button } from 'kcode-ui'
+
+        const App = ()=>{
+          return(
+            <>
+            <Button>Default</Button> 
+            <Button type="primary">Primary</Button> 
+            <Button type="success">Success</Button>
+            <Button type="info">Info</Button>
+            <Button type="warning">Warning</Button>
+            <Button type="danger">Danger</Button>
+            </>
+          )
+        }
+        export default App;
+        `}
+       describe='使用type 、plain 、round 、circle 来定义按钮样式'>
          <div className='k-list'>
           <Button>Default</Button> 
           <Button type="primary">Primary</Button> 
           <Button type="success">Success</Button>
           <Button type="info">Info</Button>
           <Button type="warning">Warning</Button>
-          <Button type="danger">Danger</Button>
+          <Button type="danger">Danger</Button>       
           </div>
           <div className='k-list'>
             <Button plain>Default</Button>
@@ -60,6 +79,68 @@ export  default function KButon(){
           <Button size='small'>Default</Button>
         </div>   
        </ContextItem>
+       <ContextItem title='自定义颜色' describe='通过Type.css设置'>
+         <div className='k-list'>
+         <Button type='pink'>Pink</Button>
+         <Button plain type='pink'>Pink</Button>
+         </div>
+       </ContextItem>
+       <ContextItem title='Props' describe='这是组件的props'>
+         <Table columns={columns} data={data} style={{color:'#000000c0'}}>
+         </Table>
+       </ContextItem>
+       {render('button')}
      </Context>
   )
 }
+
+const data = [
+  {
+    key: '1',
+    name:'type',
+    describe:'类型',
+    type:`'default'|primary'| 'success'| 'warning'| 'danger'| 'info'| 自定义` ,
+    default:'default'
+  },{
+    key: '2',
+    name:'size',
+    describe:'尺寸',
+    type:`'large'| 'default'| 'small'` ,
+    default:'default'
+  },
+  { 
+    key:'3',
+    name:'plain',
+    describe:'是否为朴素按钮',
+    type:'boolean',
+    default:'false'
+  },
+  {
+    key:'4',
+    name:'round',
+    describe:'是否为圆角按钮',
+    type:'boolean',
+    default:'false'
+  },
+  {
+    key:'5',
+    name:'circle',
+    describe:'是否为圆形按钮',
+    type:'boolean',
+    default:'false'
+  },
+  {
+    key:'6',
+    name:'disabled',
+    describe:'是否禁用',
+    type:'boolean',
+    default:'false'
+  },{
+    key:'7',
+    name:'...props',
+    describe:'原生属性',
+    type:'any',
+    default:'---'
+  }
+
+]

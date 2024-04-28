@@ -22,6 +22,7 @@ const tagMove = (e)=>{
    const a = e.nativeEvent.offsetX
    const b = ceshi.current.offsetLeft
  if(a -b < 25 & a -b > -5) tag.current.style.display = 'block'
+  else tag.current.style.display = 'none'
  
 }
 

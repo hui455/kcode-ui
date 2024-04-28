@@ -1,9 +1,9 @@
 import React,{useState,useRef} from 'react';
 import './Menu.scss'
 
-export default function Menu({onChange = ()=>{},items=[],...props}) {
+export default function Menu({onChange = ()=>{},items=[],item='',...props}) {
  
-  const [MenuHover,setMenuHover] = useState('');
+  const [MenuHover,setMenuHover] = useState(item);
   const onClick = (item)=>{
     setMenuHover(item.key);
     onChange(item);

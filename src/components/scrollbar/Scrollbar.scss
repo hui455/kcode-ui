@@ -1,5 +1,6 @@
 .kscrollbar{
   overflow-y: scroll;
+  position: relative;
 }
 
 .kscrollbar::-webkit-scrollbar{

@@ -1,6 +1,6 @@
 import React,{useState,useRef} from "react";
 import './Autocomplete.scss'
-export default function Autocomplete({option = [{label:'选项1'},{label:'选项2'}],n=6,onClickSelect = ()=>{},...props}){
+export default function Autocomplete({option = [{label:'选项1'},{label:'选项2'}],fisrtClick=true,n=6,onClickSelect = ()=>{},...props}){
   const kselect = useRef(null)
   const kinput = useRef(null)
    const [value,setValue] = useState('')
@@ -20,7 +20,8 @@ export default function Autocomplete({option = [{label:'选项1'},{label:'选项
   }
   return(
     <div className='k-autocomplete-b'>
-    <input ref={kinput} className="k-autocomplete"  value={value} onClick={()=>{
+    <input ref={kinput} className="k-autocomplete"  value={value} onClick={(e)=>{
+      if(e.target.value == '' && !fisrtClick) return
       if(data.length != 0)kselect.current.style.display = 'block'
     }} onChange={handleChange} onBlur={()=>{
       kselect.current.style.display = 'none';
@@ -29,7 +30,7 @@ export default function Autocomplete({option = [{label:'选项1'},{label:'选项
     <div ref={kselect} className='k-autocomplete-select'>
        <div className='k-autocomplete-arrow'></div>
          {data.slice(0,n).map((item,index)=>{
-          return <div className='k-autocomplete-item' key={index} onMouseDown={(e)=>{e.preventDefault();Addoption(item)}}>{item.label}</div>
+          return <div className='k-autocomplete-item'style={typeof item.label =='object' ? {height:'auto'}:{}} key={index} onMouseDown={(e)=>{e.preventDefault();Addoption(item)}}>{item.label}</div>
         })}
     </div>
     </div>

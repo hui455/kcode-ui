@@ -6,10 +6,12 @@ export default function KTabs(){
 
   return (
     <Context title='Tabs' describe='用于标记和选择。'>
-      <ContextItem title='基本用法' describe='由type属性来选择样式'>
-        <div className='k-list'>
-          <Tabs></Tabs>
-        </div>
+      <ContextItem title='基本用法' describe=''>
+          <Tabs items={[
+            {label: 'User',children:'User'},
+            {label: 'Config',children:'Config'},
+            {label: 'Role',children:'Role'}
+          ]}></Tabs>
       </ContextItem>
     </Context>
   )

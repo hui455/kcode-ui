@@ -10,6 +10,4 @@
 1. npm install kcode-ui
 2. import { Button ...} from 'kcode-ui'
 
-或者 
 
-直接code 源代码
