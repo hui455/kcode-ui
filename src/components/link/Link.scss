@@ -1,47 +1,25 @@
-@mixin link-type($color:var(--color-default),$opacity:1)
-{
-  color: $color;
-  opacity: $opacity;
-}
-.link-default{
-  @include link-type;
-}
-.link-default:hover,.link-default:active{
-  @include link-type(var(--color-primary),0.8);
-}
 
-.link{
+
+.k-link{
   text-decoration: none;
   cursor: pointer;
+  color:var(--k-link);
+  &:hover{
+    opacity: 0.7;
+  }
+  &.default:hover{
+    color:var(--el-color-primary)
+  }
+  &.underline:hover{
+    text-decoration: underline;
+  }
+  &.disabled{
+    cursor: not-allowed;
+    color:var(--k-link);
+    opacity: 0.8;
+    &:hover{
+      color: var(--k-link);
+    }
+  }
 }
 
-.link-primary{
-  @include link-type(var(--color-primary));
-}
-.link-primary:hover,.link-primary:active{
-  @include link-type(var(--color-primary),0.8);
-}
-.link-success{
-  @include link-type(var(--color-success));
-}
-.link-success:hover,.link-success:active{
-  @include link-type(var(--color-success),0.8);
-}
-.link-info{
-  @include link-type(var(--color-info));
-}
-.link-info:hover,.link-info:active{
-  @include link-type(var(--color-info),0.8);
-}
-.link-warning{
-  @include link-type(var(--color-warning));
-}
-.link-warning:hover,.link-warning:active{
-  @include link-type(var(--color-warning),0.8);
-}
-.link-danger{
-  @include link-type(var(--color-danger));
-}
-.link-danger:hover,.link-danger:active{
-  @include link-type(var(--color-danger),0.8);
-}
